@@ -6,7 +6,7 @@ module OpenCage
     class Location
       attr_reader :geo, :name
 
-      def initialize(geo, options={})
+      def initialize(geo, options = {})
         @geo  = geo
         @lat  = options[:lat]
         @lng  = options[:lng]
@@ -26,21 +26,21 @@ module OpenCage
       end
 
       def coordinates
-        [ lat, lng ]
+        [lat, lng]
       end
 
       private
 
       def results
         @results ||= Array(fetch).tap do |results|
-          raise GeocodingError.new('location not found') if results.empty?
+          fail GeocodingError, 'location not found' if results.empty?
         end
       end
 
       def fetch
         JSON.parse(open(url).read)['results']
       rescue OpenURI::HTTPError => error
-        raise GeocodingError.new(error_message(error))
+        raise GeocodingError, error_message(error)
       end
 
       def url
@@ -53,7 +53,7 @@ module OpenCage
         if @lat && @lng && !@name
           "#{lat},#{lng}"
         elsif @name
-          URI::encode(@name)
+          URI.encode(@name)
         end
       end
 
