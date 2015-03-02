@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    open_cage-geocoder (1.0.1)
+    open_cage-geocoder (1.1.0)
 
 GEM
   remote: https://rubygems.org/
