@@ -1,12 +1,15 @@
 # OpenCage Geocoder
 
+**Note::** This is a fork of the original which solves some problems with
+versioning and loading inside Rails.
+
 A ruby client for the [OpenCage Data](http://www.opencagedata.com/)
 geocoder API.
 
 ## Usage
 
 ```
-$ gem install opencage-geocoder
+$ gem install open_cage-geocoder
 ```
 
 Or in your Gemfile:
@@ -14,13 +17,13 @@ Or in your Gemfile:
 ```ruby
 source 'https://rubygems.org'
 
-gem 'opencage-geocoder'
+gem 'open_cage-geocoder'
 ```
 
 Create an instance of the geocoder, passing a valid OpenCage Data Geocoder API key:
 
 ```ruby
-require 'opencage/geocoder'
+require 'open_cage'
 
 geocoder = OpenCage::Geocoder.new(api_key: 'your-api-key-here')
 ```
