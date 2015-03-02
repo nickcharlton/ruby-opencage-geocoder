@@ -24,9 +24,7 @@ describe OpenCage::Geocoder do
 
   describe '#reverse_geocode' do
     def bermondsey
-      'Bermondsey Wall West, Bermondsey, London Borough of Southwark, '\
-      'London, SE14, Greater London, England, United Kingdom, gb, '\
-      'London Borough of Southwark'
+      'London, Bermondsey Wall West, London SE14, United Kingdom'
     end
 
     it 'reverse geocodes a set of coordinates' do
@@ -56,15 +54,15 @@ describe OpenCage::Geocoder do
     end
 
     it 'geocodes a postcode' do
-      assert_equal [51.5221558691, -0.100838524406], geo.geocode('EC1M 5RF')
+      assert_equal [51.5226295, -0.1024389], geo.geocode('EC1M 5RF')
     end
 
     it 'geocodes a place name with encoding' do
-      assert_equal [51.9625101, 7.6251879], geo.geocode('Münster')
+      assert_equal [51.9501317, 7.61330165026119], geo.geocode('Münster')
     end
 
     it 'correctly parses a request with encoding in the response' do
-      assert_equal [43.3213324, -1.9856227], geo.geocode('Donostia')
+      assert_equal [43.3224219, -1.9838889], geo.geocode('Donostia')
     end
 
     it 'throws a useful error when no results are found' do
