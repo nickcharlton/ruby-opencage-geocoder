@@ -12,4 +12,6 @@ Gem::Specification.new do |s|
   s.email       = 'dev@lokku.com'
   s.files       = ['lib/opencage/geocoder.rb']
   s.homepage    = 'https://github.com/lokku/ruby-opencage-geocoder'
+
+  s.add_development_dependency 'minitest', '~> 5.5'
 end
